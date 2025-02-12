@@ -735,6 +735,10 @@ public final class KeyValue implements Comparable<KeyValue>
       case "௲": case "௳":
         return makeStringKey(name, FLAG_SMALLER_FONT);
 
+      /* Make the BQN layout ↕ and ↩ not appear as emoji */
+      case "↕": return makeStringKeyWithSymbol("↕", "↕\uFE0E", 0);
+      case "↩": return makeStringKeyWithSymbol("↩", "↩\uFE0E", 0);
+
       /* The key is not one of the special ones. */
       default: return parseKeyDefinition(name);
     }
